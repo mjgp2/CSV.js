@@ -82,6 +82,7 @@
 
         stringify = function(value) {
           if (!value) return null;
+          if ( Array.isArray(value) ) value = value.join("\n");
           return (typeof value !== 'string') ? value : '"' + value.replace(/\"/g, '""') + '"';
         },
 
